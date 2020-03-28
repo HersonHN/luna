@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import LunaCanvas from './components/LunaCanvas.vue';
+import LunaCanvas from '../components/LunaCanvas.vue';
 
 export default {
   name: 'Demo',
