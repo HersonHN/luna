@@ -1,8 +1,33 @@
 <template>
-  <div class="luna-demo">
-    <luna-canvas theme="light" />
-    <luna-canvas theme="dark" />
-  </div>
+  <section class="luna-demo">
+    <div class="themes">
+      <label>
+        <span>Light:</span>
+        <input
+          v-model="theme"
+          type="radio"
+          name="theme"
+          value="light"
+        >
+      </label>
+      <label>
+        <span>Dark:</span>
+        <input
+          v-model="theme"
+          type="radio"
+          name="theme"
+          value="dark"
+        >
+      </label>
+    </div>
+
+    <luna-canvas
+      :theme="theme"
+      :pixel-size="15"
+      :width="40"
+      :height="20"
+    />
+  </section>
 </template>
 
 <script>
@@ -13,14 +38,28 @@ export default {
   components: {
     LunaCanvas,
   },
+  data() {
+    return {
+      theme: 'light',
+    };
+  },
 };
 </script>
 
 <style>
 .luna-demo {
+  font-family: sans-serif;
   margin-top: 60px;
   text-align: center;
-  background: lightgray;
-  padding: 10px;
+  padding: 1rem;
+  background: #eee;
+}
+
+.luna-demo .themes {
+  margin-bottom: 1rem;
+}
+
+.luna-demo label {
+  display: block;
 }
 </style>
